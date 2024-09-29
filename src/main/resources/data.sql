@@ -3,11 +3,13 @@ INSERT INTO Room (name, capacity) VALUES ('Conference Room 101', 10);
 INSERT INTO Room (name, capacity) VALUES ('Board Room 202', 20);
 INSERT INTO Room (name, capacity) VALUES ('Training Room 303', 15);
 
--- Inserting Participants
-INSERT INTO Participant (name, email) VALUES ('John Doe', 'johndoe@example.com');
-INSERT INTO Participant (name, email) VALUES ('Jane Smith', 'janesmith@example.com');
-INSERT INTO Participant (name, email) VALUES ('Michael Brown', 'michaelbrown@example.com');
-INSERT INTO Participant (name, email) VALUES ('Emily Clark', 'emilyclark@example.com');
+
+-- Inserting Participants with id
+INSERT INTO Participant (id, name, email) VALUES (1, 'Abhay', 'abhay@gmail.com');
+INSERT INTO Participant (id, name, email) VALUES (2, 'Monica', 'monica@gmail.com');
+INSERT INTO Participant (id, name, email) VALUES (3, 'Abhi', 'abhi@gmail.com');
+INSERT INTO Participant (id, name, email) VALUES (4, 'Akhand', 'akhand@gmail.com');
+
 
 -- Inserting Meetings
 INSERT INTO Meeting (start_time, end_time, room_id) VALUES
@@ -17,9 +19,9 @@ INSERT INTO Meeting (start_time, end_time, room_id) VALUES
 
 -- Inserting Meeting Participants (linking Participants to Meetings)
 INSERT INTO Meeting_Participants (meeting_id, participants_id) VALUES
-((SELECT id FROM Meeting WHERE start_time = '2024-09-28T09:00:00'), (SELECT id FROM Participant WHERE name = 'John Doe')),
-((SELECT id FROM Meeting WHERE start_time = '2024-09-28T09:00:00'), (SELECT id FROM Participant WHERE name = 'Jane Smith')),
-((SELECT id FROM Meeting WHERE start_time = '2024-09-28T11:00:00'), (SELECT id FROM Participant WHERE name = 'Jane Smith')),
-((SELECT id FROM Meeting WHERE start_time = '2024-09-28T11:00:00'), (SELECT id FROM Participant WHERE name = 'Michael Brown')),
-((SELECT id FROM Meeting WHERE start_time = '2024-09-29T14:00:00'), (SELECT id FROM Participant WHERE name = 'John Doe')),
-((SELECT id FROM Meeting WHERE start_time = '2024-09-29T14:00:00'), (SELECT id FROM Participant WHERE name = 'Emily Clark'));
+((SELECT id FROM Meeting WHERE start_time = '2024-09-28T09:00:00'), (SELECT id FROM Participant WHERE name = 'Abhay')),
+((SELECT id FROM Meeting WHERE start_time = '2024-09-28T09:00:00'), (SELECT id FROM Participant WHERE name = 'Monica')),
+((SELECT id FROM Meeting WHERE start_time = '2024-09-28T11:00:00'), (SELECT id FROM Participant WHERE name = 'Monica')),
+((SELECT id FROM Meeting WHERE start_time = '2024-09-28T11:00:00'), (SELECT id FROM Participant WHERE name = 'Abhi')),
+((SELECT id FROM Meeting WHERE start_time = '2024-09-29T14:00:00'), (SELECT id FROM Participant WHERE name = 'Abhay')),
+((SELECT id FROM Meeting WHERE start_time = '2024-09-29T14:00:00'), (SELECT id FROM Participant WHERE name = 'Akhand'));
