@@ -4,7 +4,7 @@ INSERT INTO Room (name, capacity) VALUES ('Board Room 202', 20);
 INSERT INTO Room (name, capacity) VALUES ('Training Room 303', 15);
 
 
--- Inserting Participants with id
+-- Inserting Participants 
 INSERT INTO Participant (id, name, email) VALUES (1, 'Abhay', 'abhay@gmail.com');
 INSERT INTO Participant (id, name, email) VALUES (2, 'Monica', 'monica@gmail.com');
 INSERT INTO Participant (id, name, email) VALUES (3, 'Abhi', 'abhi@gmail.com');
